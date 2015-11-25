@@ -17,21 +17,22 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	
+        Jump();
 	}
 
 	void FixedUpdate ()
 	{
-		Jump ();
+	
 	}
 
 	void Jump()
 	{
-		// Jump if the jumpButton is pressed
-		if (Input.GetKeyDown(jumpButton))
-		{
-			//Debug.Log("Jump");
-			rigBody.velocity = new Vector2 (0, jumpHeight);
-		}
+
+        // Jump if the jumpButton is pressed Input.GetKeyDown(jumpButton)
+        if (Input.touchCount > 0 || Input.GetKeyDown(jumpButton))
+        {
+            //Debug.Log("Jump");
+            rigBody.velocity = new Vector2(0, jumpHeight);
+        }
 	}
 }
