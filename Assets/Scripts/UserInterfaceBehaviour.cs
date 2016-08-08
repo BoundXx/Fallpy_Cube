@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class UserInterfaceBehaviour : MonoBehaviour 
 {
 
 	public void ChangeScene(int scene)
 	{
-		Application.LoadLevel (scene); //Loads the level specified in the build order (Found in BUILD SETTINGS)
+		SceneManager.LoadScene (scene); //Loads the level specified in the build order (Found in BUILD SETTINGS)
 	}
 
 	public void MuteMusic ()
