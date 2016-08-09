@@ -10,8 +10,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/DifficultySelector.unity
   - enabled: 0
-    path: Assets/Scenes/GameTestScene.unity
+    path: Assets/Scenes/Distance Gamemode/Dis-SP-mobile.unity
   - enabled: 0
-    path: Assets/Scenes/Gamemode-SP-g1.unity
+    path: Assets/Scenes/Distance Gamemode/Dis-SP-desktop.unity
+  - enabled: 0
+    path: Assets/Scenes/Endurance Gamemode/End-SP-desktop.unity
   - enabled: 1
-    path: Assets/Scenes/Gamemode-SP-mobile.unity
+    path: Assets/Scenes/Endurance Gamemode/End-SP-mobile.unity

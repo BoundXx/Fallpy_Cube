@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Win : MonoBehaviour
+public class EnduranceGMC : MonoBehaviour
 {
 
     public int score;
@@ -19,13 +20,14 @@ public class Win : MonoBehaviour
         scoreText.text = score.ToString();
     }
     */
-    
-    
+
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Line")
         {
             Debug.Log("collided");
+            SceneManager.LoadScene("End-SP-desktop");
         }
     }
 }

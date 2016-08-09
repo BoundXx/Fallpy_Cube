@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour
+public class KeyboardIC : MonoBehaviour
 {
 	public float jumpHeight;
 	public KeyCode jumpButton;
 
-	private Rigidbody rigBody;
+	private Rigidbody2D rigBody;
 	
 	// Use this for initialization
 	void Start ()
 	{
-		rigBody = GetComponent<Rigidbody> ();
+		rigBody = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame

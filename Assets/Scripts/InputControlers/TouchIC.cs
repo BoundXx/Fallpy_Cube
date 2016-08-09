@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TouchInput : MonoBehaviour
+public class TouchIC : MonoBehaviour
 {
-
-    public GameObject player;
+    
     public float jumpHeight;
     public AudioClip pewSound;
 
-    private Rigidbody rigBody;
+    private Rigidbody2D rigBody;
 
 	// Use this for initialization
 	void Start ()
     {
-        rigBody = player.GetComponent<Rigidbody> ();
+        rigBody = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
@@ -25,7 +24,7 @@ public class TouchInput : MonoBehaviour
             Debug.Log("Jump");
             rigBody.velocity = new Vector2(0, jumpHeight);
 
-            AudioSource.PlayClipAtPoint(pewSound, player.transform.position);
+            AudioSource.PlayClipAtPoint(pewSound, transform.position);
         }
 
 	}
