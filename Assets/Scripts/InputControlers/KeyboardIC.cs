@@ -8,26 +8,48 @@ public class KeyboardIC : MonoBehaviour
 
 	private Rigidbody2D rigBody;
 	
-	// Use this for initialization
-	void Start ()
-	{
-		rigBody = GetComponent<Rigidbody2D> ();
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
+    void Awake()
+    {
+        rigBody = GetComponent<Rigidbody2D>();
+        Time.timeScale = 0;
+    }
+
+    void unFreeze()
+    {
+        Time.timeScale = 1.0f;
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
         Jump();
-	}
+    }
 
-	void Jump()
+    void Jump()
 	{
-
+        bool isFrozen = true;
+        
         // Jump if the jumpButton is pressed Input.GetKeyDown(jumpButton)
         if (Input.touchCount > 0 || Input.GetKeyDown(jumpButton))
         {
-            //Debug.Log("Jump");
+            if (isFrozen)
+            {
+                unFreeze();
+                isFrozen = false;
+            }
+
             rigBody.velocity = new Vector2(0, jumpHeight);
+           
+            
         }
 	}
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Line")
+        {
+            Debug.Log("You lose!");
+        }
+    }
 }

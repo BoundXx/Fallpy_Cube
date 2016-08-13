@@ -6,28 +6,16 @@ using System.Collections;
 public class EnduranceGMC : MonoBehaviour
 {
 
-    public int score;
+    public float score;
     public Text scoreText;
-    public GameObject triggerer;
 
-    /*
     void Awake()
     {
         scoreText.text = score.ToString();
 	}
 	void Update ()
     {
+        score = Time.timeSinceLevelLoad;
         scoreText.text = score.ToString();
-    }
-    */
-
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Line")
-        {
-            Debug.Log("collided");
-            SceneManager.LoadScene("End-SP-desktop");
-        }
     }
 }
